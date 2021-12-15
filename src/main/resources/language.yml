@@ -1,0 +1,8 @@
+chat_cleared: '&aThe chat has been cleared by %player%&a.'
+chat_cleared_exempt: '&aThe chat has been cleared by %player%&a, but you were not affected.'
+chat_muted: '&aThe chat has been muted by %player%.'
+chat_unmuted: '&aThe chat has been unmuted by %player%.'
+chat_slowmode: '&aThe chat delay has been set to %cooldown% seconds by %player%.'
+chat_slowmode_get: '&aThe chat delay is currently set to &l%cooldown% seconds&a.'
+chat_slowmode_player: '&cYou can talk again in &l%cooldown% seconds&c.'
+not_a_number: '&cThat is not a number.'

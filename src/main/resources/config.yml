@@ -1,0 +1,10 @@
+title: '&a&lWELCOME'
+subtitle: '&7Welcome to Render Network, %player%!'
+
+resourcepack:
+  title: '&3&lRESOURCE PACK'
+  subtitle: '&7Applying resource pack...'
+  url: ''
+  hash: ''
+  kickmessage: '&cPlease enable your resource packs in order to join Render Network!\nIf you need help, join our Discord: discord.rendernetwork.co'
+  kick: true

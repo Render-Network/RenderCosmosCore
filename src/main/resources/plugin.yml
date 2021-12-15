@@ -1,0 +1,7 @@
+name: RenderCosmosCore
+version: '${project.version}'
+main: co.rendernetwork.cosmoscore.Main
+api-version: 1.18
+prefix: RCore
+authors: [ dynmie ]
+website: '${project.url}'
