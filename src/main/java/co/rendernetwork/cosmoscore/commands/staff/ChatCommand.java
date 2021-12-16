@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandAlias("chat")
-@CommandPermission("cosmos.chat.use")
+@CommandPermission("cosmos.chat")
 public class ChatCommand extends BaseCommand {
 
     private final Main instance = Main.getInstance();

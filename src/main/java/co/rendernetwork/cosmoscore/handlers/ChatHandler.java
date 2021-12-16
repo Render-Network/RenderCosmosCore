@@ -26,7 +26,7 @@ public class ChatHandler {
     public void clearChat(CommandSender sender) {
 
         for (Player player : Bukkit.getOnlinePlayers()) {
-            if (!player.hasPermission("cosmos.clear.exempt")) {
+            if (!player.hasPermission("cosmos.chat.clear.exempt")) {
                 for (int i = 0; i < 100; i++) {
                     player.sendMessage("");
                 }

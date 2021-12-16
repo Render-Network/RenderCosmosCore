@@ -19,7 +19,7 @@ public class SlowModeListener implements Listener {
 
         Player player = event.getPlayer();
 
-        if (player.hasPermission("cosmos.slowmode.exempt")) {
+        if (player.hasPermission("cosmos.chat.slow.exempt")) {
             chatHandler.setSlowMode(player.getUniqueId(), false);
             return;
         }
