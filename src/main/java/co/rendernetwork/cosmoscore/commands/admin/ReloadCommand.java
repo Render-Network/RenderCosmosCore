@@ -23,6 +23,7 @@ public class ReloadCommand extends BaseCommand {
         instance.reloadConfig();
         instance.getLanguage().reload();
         instance.getSettings().reload();
+        instance.getHandlerManager().getPlayerData().reload();
 
         sender.sendMessage(ColorUtil.color("&aThe config has been reloaded."));
 
