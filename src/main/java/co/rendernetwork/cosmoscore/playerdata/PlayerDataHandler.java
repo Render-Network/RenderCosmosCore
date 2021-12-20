@@ -9,6 +9,9 @@ public class PlayerDataHandler {
     private final Map<UUID, PlayerData> playerDataList = new HashMap<>();
 
     public PlayerData getPlayer(UUID uuid) {
+        if (playerDataList.get(uuid) == null) {
+            addPlayer(uuid);
+        }
         return playerDataList.get(uuid);
     }
 
