@@ -18,8 +18,8 @@ public class PlayerDataListener implements Listener {
 
         UUID uuid = event.getUniqueId();
 
-        instance.getPlayerData().addPlayer(uuid);
-        PlayerData playerData = instance.getPlayerData().getPlayer(uuid);
+        instance.getHandlerManager().getPlayerData().addPlayer(uuid);
+        PlayerData playerData = instance.getHandlerManager().getPlayerData().getPlayer(uuid);
 
         playerData.createFile();
 
@@ -30,7 +30,7 @@ public class PlayerDataListener implements Listener {
 
         UUID uuid = event.getPlayer().getUniqueId();
 
-        instance.getPlayerData().removePlayer(uuid);
+        instance.getHandlerManager().getPlayerData().removePlayer(uuid);
 
     }
 

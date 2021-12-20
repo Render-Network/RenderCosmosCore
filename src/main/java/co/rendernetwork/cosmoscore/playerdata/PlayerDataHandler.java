@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 
 import java.util.*;
 
-public class PlayerDataManager {
+public class PlayerDataHandler {
 
     private final Map<UUID, PlayerData> playerDataList = new HashMap<>();
 

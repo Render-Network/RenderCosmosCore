@@ -20,7 +20,7 @@ public class ChatCommand extends BaseCommand {
     @CommandCompletion("@empty")
     @Description("Clears the chat for all players.")
     public void onClear(CommandSender sender) {
-        instance.getChatManager().clearChat(sender);
+        instance.getHandlerManager().getChatHandler().clearChat(sender);
 
     }
 
@@ -29,14 +29,14 @@ public class ChatCommand extends BaseCommand {
     @CommandCompletion("@empty")
     @Description("Mutes the chat for all players.")
     public void onMute(CommandSender sender) {
-        if (instance.getChatManager().getMuted()) {
-            instance.getChatManager().setMuted(false);
+        if (instance.getHandlerManager().getChatHandler().getMuted()) {
+            instance.getHandlerManager().getChatHandler().setMuted(false);
             for (Player player : Bukkit.getOnlinePlayers()) {
                 player.sendMessage(Lang.CHAT_UNMUTED.get(sender));
             }
             instance.getLogger().info(Lang.CHAT_UNMUTED.get(sender));
         } else {
-            instance.getChatManager().setMuted(true);
+            instance.getHandlerManager().getChatHandler().setMuted(true);
             for (Player player : Bukkit.getOnlinePlayers()) {
                 player.sendMessage(Lang.CHAT_MUTED.get(sender));
             }
@@ -52,7 +52,7 @@ public class ChatCommand extends BaseCommand {
     public void onSlow(CommandSender sender) {
         sender.sendMessage(
                 Lang.CHAT_SLOWMODE_GET.get()
-                        .replace("%cooldown%", String.valueOf(instance.getChatManager().getSlowModeDelay() / 1000L))
+                        .replace("%cooldown%", String.valueOf(instance.getHandlerManager().getChatHandler().getSlowModeDelay() / 1000L))
         );
     }
 
@@ -63,7 +63,7 @@ public class ChatCommand extends BaseCommand {
     @Syntax("<number>")
     public void onSlow(CommandSender sender, @Conditions("limits:min=0,max=10") Integer number) {
         sender.sendMessage(Lang.CHAT_SLOWMODE.get(sender).replace("%cooldown%", String.valueOf(number)));
-        instance.getChatManager().setSlowModeDelay((long) number * 1000L);
+        instance.getHandlerManager().getChatHandler().setSlowModeDelay((long) number * 1000L);
     }
 
     @HelpCommand

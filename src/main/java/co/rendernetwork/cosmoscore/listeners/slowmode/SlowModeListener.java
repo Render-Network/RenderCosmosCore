@@ -12,7 +12,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class SlowModeListener implements Listener {
 
     Main instance = Main.getInstance();
-    ChatHandler chatHandler = instance.getChatManager();
+    ChatHandler chatHandler = instance.getHandlerManager().getChatHandler();
 
     @EventHandler
     public void onChat(AsyncChatEvent event) {

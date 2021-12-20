@@ -3,9 +3,8 @@ package co.rendernetwork.cosmoscore;
 import co.rendernetwork.cosmoscore.commands.CommandManager;
 import co.rendernetwork.cosmoscore.configuration.LanguageConfig;
 import co.rendernetwork.cosmoscore.configuration.SettingsConfig;
+import co.rendernetwork.cosmoscore.handlers.HandlerManager;
 import co.rendernetwork.cosmoscore.listeners.ListenerManager;
-import co.rendernetwork.cosmoscore.handlers.ChatHandler;
-import co.rendernetwork.cosmoscore.playerdata.PlayerDataManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
@@ -13,8 +12,7 @@ public final class Main extends JavaPlugin {
     private static Main instance;
     private LanguageConfig language;
     private SettingsConfig settings;
-    private ChatHandler chatManager;
-    private PlayerDataManager playerDataManager;
+    private HandlerManager handlerManager;
 
     @Override
     public void onEnable() {
@@ -23,11 +21,11 @@ public final class Main extends JavaPlugin {
         language = new LanguageConfig();
         settings = new SettingsConfig();
 
+        handlerManager = new HandlerManager();
+
         createConfigs();
 
-        chatManager = new ChatHandler();
-        playerDataManager = new PlayerDataManager();
-        playerDataManager.reload();
+        handlerManager.getPlayerData().reload();
 
         new CommandManager();
         new ListenerManager();
@@ -51,12 +49,8 @@ public final class Main extends JavaPlugin {
         return settings;
     }
 
-    public ChatHandler getChatManager() {
-        return chatManager;
-    }
-
-    public PlayerDataManager getPlayerData() {
-        return playerDataManager;
+    public HandlerManager getHandlerManager() {
+        return handlerManager;
     }
 
     public void createConfigs() {
