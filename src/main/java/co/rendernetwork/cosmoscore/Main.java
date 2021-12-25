@@ -25,8 +25,6 @@ public final class Main extends JavaPlugin {
 
         createConfigs();
 
-        handlerManager.getPlayerData().reload();
-
         new CommandManager();
         new ListenerManager();
 

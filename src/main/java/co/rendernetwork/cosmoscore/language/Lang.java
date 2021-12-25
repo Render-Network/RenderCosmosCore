@@ -6,7 +6,6 @@ import org.bukkit.command.CommandSender;
 
 public enum Lang {
 
-    NOT_A_NUMBER("not_a_number", ""),
     CHAT_SLOWMODE("chat_slowmode", ""),
     CHAT_CLEARED("chat_cleared", ""),
     CHAT_CLEARED_EXEMPT("chat_cleared_exempt", ""),
