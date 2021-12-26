@@ -1,6 +1,8 @@
 package co.rendernetwork.cosmoscore.listeners;
 
 import co.rendernetwork.cosmoscore.Main;
+import co.rendernetwork.cosmoscore.listeners.playerdata.PlayerDataPreLoginListener;
+import co.rendernetwork.cosmoscore.listeners.playerdata.PlayerDataQuitListener;
 import co.rendernetwork.cosmoscore.listeners.resourcepack.TitleResourcePackListener;
 import co.rendernetwork.cosmoscore.listeners.slowmode.SlowModeListener;
 import com.google.common.collect.ImmutableList;
@@ -18,8 +20,15 @@ public class ListenerManager {
 
     private final List<Listener> listeners = ImmutableList.of(
 
+            // SLOWMODE
             new SlowModeListener(),
-            new TitleResourcePackListener()
+
+            // RESOURCEPACK
+            new TitleResourcePackListener(),
+
+            // PLAYERDATA
+            new PlayerDataPreLoginListener(),
+            new PlayerDataQuitListener()
 
     );
 
