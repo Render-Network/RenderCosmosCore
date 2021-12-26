@@ -11,8 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-import static org.bukkit.Bukkit.getPlayer;
-
 public class CPlayer {
 
     Main instance = Main.getInstance();
@@ -40,8 +38,8 @@ public class CPlayer {
 
             try {
                 playerData = new PlayerData((Map<String, Object>) Objects.requireNonNull(config.get(uuid.toString())));
-            } catch (NullPointerException e) {
-                Bukkit.getLogger().info("Failed to load Player Data for " + uuid + ".");
+            } catch (NullPointerException | ClassCastException e) {
+                Bukkit.getLogger().warning("Failed to load Player Data for " + uuid + ".");
             }
 
         }
