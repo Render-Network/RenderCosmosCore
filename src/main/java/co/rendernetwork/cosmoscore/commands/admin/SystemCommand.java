@@ -8,9 +8,9 @@ import co.rendernetwork.cosmoscore.player.CPlayer;
 import co.rendernetwork.cosmoscore.utils.ColorUtil;
 import org.bukkit.command.CommandSender;
 
-@CommandAlias("basecommand")
+@CommandAlias("system")
 @CommandPermission("cosmos.admin")
-public class ReloadCommand extends BaseCommand {
+public class SystemCommand extends BaseCommand {
 
     private final Main instance = Main.getInstance();
 

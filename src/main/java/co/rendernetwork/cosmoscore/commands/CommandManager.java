@@ -5,7 +5,7 @@ import co.aikar.commands.ConditionFailedException;
 import co.aikar.commands.MessageType;
 import co.aikar.commands.PaperCommandManager;
 import co.rendernetwork.cosmoscore.Main;
-import co.rendernetwork.cosmoscore.commands.admin.ReloadCommand;
+import co.rendernetwork.cosmoscore.commands.admin.SystemCommand;
 import co.rendernetwork.cosmoscore.commands.staff.ChatCommand;
 import org.bukkit.ChatColor;
 
@@ -28,7 +28,7 @@ public class CommandManager {
 
     private void registerAllCommands() {
 
-        registerCommand(new ReloadCommand());
+        registerCommand(new SystemCommand());
         registerCommand(new ChatCommand());
 
     }
