@@ -5,6 +5,7 @@ import co.rendernetwork.cosmoscore.configuration.LanguageConfig;
 import co.rendernetwork.cosmoscore.configuration.SettingsConfig;
 import co.rendernetwork.cosmoscore.handlers.HandlerManager;
 import co.rendernetwork.cosmoscore.listeners.ListenerManager;
+import co.rendernetwork.cosmoscore.player.CPlayer;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
@@ -28,11 +29,18 @@ public final class Main extends JavaPlugin {
         new CommandManager();
         new ListenerManager();
 
+        reload();
+
     }
 
     @Override
     public void onDisable() {
+        CPlayer.saveAllPlayers();
         instance = null;
+    }
+
+    private void reload() {
+        CPlayer.reloadAllPlayerData();
     }
 
     public static Main getInstance() {

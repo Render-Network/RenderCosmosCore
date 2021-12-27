@@ -68,7 +68,7 @@ public class CPlayer {
         return playerData;
     }
 
-    private void save() {
+    public void save() {
         config.set(uuid.toString(), playerData.serialize());
         try {
             config.save(file);
@@ -101,6 +101,26 @@ public class CPlayer {
             if (cPlayer.getUniqueId().equals(uuid)) return cPlayer;
         }
         return null;
+    }
+
+    public static void saveAllPlayers() {
+        for (CPlayer cPlayer : cPlayerMap) {
+            cPlayer.save();
+        }
+    }
+
+    // TODO Fix returning ConcurrentModificationException
+    public static void reloadAllPlayerData() {
+
+        if (!cPlayerMap.isEmpty())
+            cPlayerMap.clear();
+
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            CPlayer cPlayer = new CPlayer(player.getUniqueId());
+            cPlayerMap.add(cPlayer);
+            cPlayer.createIfNotExists();
+        }
+
     }
 
 }

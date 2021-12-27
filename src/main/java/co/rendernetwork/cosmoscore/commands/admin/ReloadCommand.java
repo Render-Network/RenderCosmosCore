@@ -4,6 +4,7 @@ import co.aikar.commands.BaseCommand;
 import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.*;
 import co.rendernetwork.cosmoscore.Main;
+import co.rendernetwork.cosmoscore.player.CPlayer;
 import co.rendernetwork.cosmoscore.utils.ColorUtil;
 import org.bukkit.command.CommandSender;
 
@@ -23,8 +24,20 @@ public class ReloadCommand extends BaseCommand {
         instance.reloadConfig();
         instance.getLanguage().reload();
         instance.getSettings().reload();
+        CPlayer.reloadAllPlayerData();
 
-        sender.sendMessage(ColorUtil.color("&aThe config has been reloaded."));
+        sender.sendMessage(ColorUtil.color("&aAll data has been reloaded."));
+
+    }
+
+    @Subcommand("reload playerdata")
+    @CommandPermission("cosmos.admin.reload.playerdata")
+    @Description("Reloads player data for all players")
+    public void onReloadPlayerData(CommandSender sender) {
+
+        CPlayer.reloadAllPlayerData();
+
+        sender.sendMessage(ColorUtil.color("&aPlayer Data for all players has been reloaded."));
 
     }
 
