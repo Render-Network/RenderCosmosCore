@@ -70,7 +70,6 @@ public class User {
     }
 
     public String getLastKnownName() {
-        Bukkit.getLogger().warning("[GOD] getLastKnownName()=" + userData.getLastKnownName());
         return userData.getLastKnownName();
     }
 
