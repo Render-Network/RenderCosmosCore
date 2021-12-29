@@ -84,24 +84,24 @@ public class User {
     public static User get(Player player) {
         boolean online = player != null;
         if (!online) return null;
-        for (User cPlayer : userMap) {
-            if (cPlayer.getUniqueId().equals(player.getUniqueId())) return cPlayer;
+        for (User user : userMap) {
+            if (user.getUniqueId().equals(player.getUniqueId())) return user;
         }
-        return null;
+        return new User(player.getUniqueId());
     }
 
     public static User get(UUID uuid) {
         boolean online = Bukkit.getPlayer(uuid) != null;
         if (!online) return null;
-        for (User cPlayer : userMap) {
-            if (cPlayer.getUniqueId().equals(uuid)) return cPlayer;
+        for (User user : userMap) {
+            if (user.getUniqueId().equals(uuid)) return user;
         }
-        return null;
+        return new User(uuid);
     }
 
     public static void saveAll() {
-        for (User cPlayer : userMap) {
-            cPlayer.save();
+        for (User user : userMap) {
+            user.save();
         }
     }
 
@@ -111,9 +111,9 @@ public class User {
         if (Bukkit.getOnlinePlayers().size() == 0) return;
 
         for (Player player : Bukkit.getOnlinePlayers()) {
-            User cPlayer = new User(player.getUniqueId());
-            userMap.add(cPlayer);
-            cPlayer.createIfNotExists();
+            User user = new User(player.getUniqueId());
+            userMap.add(user);
+            user.createIfNotExists();
         }
 
     }
