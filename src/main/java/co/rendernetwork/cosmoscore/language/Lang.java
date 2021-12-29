@@ -12,7 +12,9 @@ public enum Lang {
     CHAT_MUTED("chat_muted", ""),
     CHAT_UNMUTED("chat_unmuted", ""),
     CHAT_SLOWMODE_GET("chat_slowmode_get", ""),
-    CHAT_SLOWMODE_PLAYER("chat_slowmode_player", "");
+    CHAT_SLOWMODE_PLAYER("chat_slowmode_player", ""),
+    COMMANDSPY_ENABLED("commandspy_enabled", ""),
+    COMMANDSPY_DISABLED("commandspy_disabled", "");
 
     Main instance = Main.getInstance();
 

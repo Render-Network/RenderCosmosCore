@@ -8,3 +8,6 @@ resourcepack:
   hash: ''
   kickmessage: '&cPlease enable your resource packs in order to join Render Network!\nIf you need help, join our Discord: discord.rendernetwork.co'
   kick: true
+
+commandspy:
+  message: '&8&lCSpy &8dynmie&7: &8/%message%'

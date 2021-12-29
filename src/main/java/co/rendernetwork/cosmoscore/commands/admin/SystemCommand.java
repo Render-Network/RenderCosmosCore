@@ -4,7 +4,7 @@ import co.aikar.commands.BaseCommand;
 import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.*;
 import co.rendernetwork.cosmoscore.Main;
-import co.rendernetwork.cosmoscore.player.CPlayer;
+import co.rendernetwork.cosmoscore.entity.User;
 import co.rendernetwork.cosmoscore.utils.ColorUtil;
 import org.bukkit.command.CommandSender;
 
@@ -24,7 +24,7 @@ public class SystemCommand extends BaseCommand {
         instance.reloadConfig();
         instance.getLanguage().reload();
         instance.getSettings().reload();
-        CPlayer.reloadAllPlayerData();
+        User.reloadAllUserData();
 
         sender.sendMessage(ColorUtil.color("&aAll data has been reloaded."));
 
@@ -35,7 +35,7 @@ public class SystemCommand extends BaseCommand {
     @Description("Reloads player data for all players")
     public void onReloadPlayerData(CommandSender sender) {
 
-        CPlayer.reloadAllPlayerData();
+        User.reloadAllUserData();
 
         sender.sendMessage(ColorUtil.color("&aPlayer Data for all players has been reloaded."));
 

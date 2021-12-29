@@ -1,6 +1,6 @@
 package co.rendernetwork.cosmoscore.listeners.playerdata;
 
-import co.rendernetwork.cosmoscore.player.CPlayer;
+import co.rendernetwork.cosmoscore.entity.User;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
@@ -14,10 +14,11 @@ public class PlayerDataPreLoginListener implements Listener {
 
         UUID uuid = event.getUniqueId();
 
-        CPlayer cPlayer = new CPlayer(uuid);
-        CPlayer.getPlayers().add(cPlayer);
+        User user = new User(uuid);
+        User.getAllUsers().remove(user);
+        User.getAllUsers().add(user);
 
-        cPlayer.createIfNotExists();
+        user.createIfNotExists();
 
     }
 
