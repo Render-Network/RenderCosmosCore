@@ -60,8 +60,8 @@ public final class Main extends JavaPlugin {
     }
 
     public void createConfigs() {
-        language.createFile();
-        settings.createFile();
+        language.createIfNotExists();
+        settings.createIfNotExists();
         saveDefaultConfig();
     }
 

@@ -8,46 +8,48 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class SettingsConfig {
+public class SettingsConfig implements IConfig {
 
     private final Main instance = Main.getInstance();
 
-    private File settingsFile;
-    private final FileConfiguration settingsConfig = new YamlConfiguration();;
+    private File file;
+    private final FileConfiguration config = new YamlConfiguration();;
 
-    public SettingsConfig() {}
-
+    @Override
     public FileConfiguration get() {
-        return settingsConfig;
+        return config;
     }
 
-    public void createFile() {
+    @Override
+    public void createIfNotExists() {
 
-        settingsFile = new File(instance.getDataFolder(), "settings.yml");
+        file = new File(instance.getDataFolder(), "settings.yml");
 
-        if (!settingsFile.exists()) {
+        if (!file.exists()) {
             instance.saveResource("settings.yml", false);
         }
 
         try {
-            settingsConfig.load(settingsFile);
+            config.load(file);
         } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();
         }
 
     }
 
+    @Override
     public void reload() {
         try {
-            settingsConfig.load(settingsFile);
+            config.load(file);
         } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();
         }
     }
 
+    @Override
     public void save() {
         try {
-            settingsConfig.save(settingsFile);
+            config.save(file);
         } catch (IOException e) {
             e.printStackTrace();
         }

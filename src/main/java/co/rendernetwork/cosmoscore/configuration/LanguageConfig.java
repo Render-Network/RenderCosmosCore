@@ -8,39 +8,49 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class LanguageConfig {
+public class LanguageConfig implements IConfig {
 
     private final Main instance = Main.getInstance();
 
-    private File languageFile;
-    private final FileConfiguration languageConfig = new YamlConfiguration();;
+    private File file;
+    private final FileConfiguration config = new YamlConfiguration();;
 
-    public LanguageConfig() {}
-
+    @Override
     public FileConfiguration get() {
-        return languageConfig;
+        return config;
     }
 
-    public void createFile() {
+    @Override
+    public void createIfNotExists() {
 
-        languageFile = new File(instance.getDataFolder(), "language.yml");
+        file = new File(instance.getDataFolder(), "language.yml");
 
-        if (!languageFile.exists()) {
+        if (!file.exists()) {
             instance.saveResource("language.yml", false);
         }
 
         try {
-            languageConfig.load(languageFile);
+            config.load(file);
         } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();
         }
 
     }
 
+    @Override
     public void reload() {
         try {
-            languageConfig.load(languageFile);
+            config.load(file);
         } catch (IOException | InvalidConfigurationException exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    @Override
+    public void save() {
+        try {
+            config.save(file);
+        } catch (IOException exception) {
             exception.printStackTrace();
         }
     }
