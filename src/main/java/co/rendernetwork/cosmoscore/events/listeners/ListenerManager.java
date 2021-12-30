@@ -19,7 +19,8 @@ public class ListenerManager {
             new SlowModeListener(),
             new TitleResourcePackListener(),
             new UserDataListener(),
-            new CommandSpyListener()
+            new CommandSpyListener(),
+            new MenuListener()
 
     );
 
