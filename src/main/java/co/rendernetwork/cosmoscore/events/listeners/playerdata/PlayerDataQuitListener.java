@@ -1,4 +1,4 @@
-package co.rendernetwork.cosmoscore.listeners.playerdata;
+package co.rendernetwork.cosmoscore.events.listeners.playerdata;
 
 import co.rendernetwork.cosmoscore.entity.User;
 import org.bukkit.event.EventHandler;

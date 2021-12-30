@@ -1,10 +1,11 @@
-package co.rendernetwork.cosmoscore.listeners;
+package co.rendernetwork.cosmoscore.events.listeners;
 
 import co.rendernetwork.cosmoscore.Main;
-import co.rendernetwork.cosmoscore.listeners.playerdata.PlayerDataPreLoginListener;
-import co.rendernetwork.cosmoscore.listeners.playerdata.PlayerDataQuitListener;
-import co.rendernetwork.cosmoscore.listeners.resourcepack.TitleResourcePackListener;
-import co.rendernetwork.cosmoscore.listeners.slowmode.SlowModeListener;
+import co.rendernetwork.cosmoscore.events.listeners.commandspy.CommandSpyListener;
+import co.rendernetwork.cosmoscore.events.listeners.playerdata.PlayerDataPreLoginListener;
+import co.rendernetwork.cosmoscore.events.listeners.playerdata.PlayerDataQuitListener;
+import co.rendernetwork.cosmoscore.events.listeners.resourcepack.TitleResourcePackListener;
+import co.rendernetwork.cosmoscore.events.listeners.slowmode.SlowModeListener;
 import com.google.common.collect.ImmutableList;
 import org.bukkit.event.Listener;
 
@@ -28,7 +29,10 @@ public class ListenerManager {
 
             // PLAYERDATA
             new PlayerDataPreLoginListener(),
-            new PlayerDataQuitListener()
+            new PlayerDataQuitListener(),
+
+            // COMMANDSPY
+            new CommandSpyListener()
 
     );
 

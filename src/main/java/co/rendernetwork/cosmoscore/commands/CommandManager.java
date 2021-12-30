@@ -7,6 +7,7 @@ import co.aikar.commands.PaperCommandManager;
 import co.rendernetwork.cosmoscore.Main;
 import co.rendernetwork.cosmoscore.commands.admin.SystemCommand;
 import co.rendernetwork.cosmoscore.commands.staff.ChatCommand;
+import co.rendernetwork.cosmoscore.commands.staff.CommandSpyCommand;
 import org.bukkit.ChatColor;
 
 public class CommandManager {
@@ -30,6 +31,7 @@ public class CommandManager {
 
         registerCommand(new SystemCommand());
         registerCommand(new ChatCommand());
+        registerCommand(new CommandSpyCommand());
 
     }
 

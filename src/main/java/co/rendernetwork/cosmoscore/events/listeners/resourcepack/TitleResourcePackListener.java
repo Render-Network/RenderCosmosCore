@@ -1,4 +1,4 @@
-package co.rendernetwork.cosmoscore.listeners.resourcepack;
+package co.rendernetwork.cosmoscore.events.listeners.resourcepack;
 
 import co.rendernetwork.cosmoscore.Main;
 import co.rendernetwork.cosmoscore.utils.ByteArrayUtil;

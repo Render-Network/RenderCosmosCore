@@ -7,3 +7,4 @@ chat_slowmode_get: '&aThe chat delay is currently set to &l%cooldown% seconds&a.
 chat_slowmode_player: '&cYou can talk again in &l%cooldown% seconds&c.'
 commandspy_enabled: '&eCommand Spy for %player% has been &aenabled&e.'
 commandspy_disabled: '&eCommand Spy for %player% has been &cdisabled&e.'
+commandspy_message: '&8&lCOMMANDSPY &8%player%&7: &8%message%'
