@@ -1,4 +1,4 @@
-package co.rendernetwork.cosmoscore.events.listeners.slowmode;
+package co.rendernetwork.cosmoscore.events.listeners;
 
 import co.rendernetwork.cosmoscore.Main;
 import co.rendernetwork.cosmoscore.handlers.ChatHandler;

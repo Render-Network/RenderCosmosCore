@@ -1,11 +1,6 @@
 package co.rendernetwork.cosmoscore.events.listeners;
 
 import co.rendernetwork.cosmoscore.Main;
-import co.rendernetwork.cosmoscore.events.listeners.commandspy.CommandSpyListener;
-import co.rendernetwork.cosmoscore.events.listeners.playerdata.PlayerDataPreLoginListener;
-import co.rendernetwork.cosmoscore.events.listeners.playerdata.PlayerDataQuitListener;
-import co.rendernetwork.cosmoscore.events.listeners.resourcepack.TitleResourcePackListener;
-import co.rendernetwork.cosmoscore.events.listeners.slowmode.SlowModeListener;
 import com.google.common.collect.ImmutableList;
 import org.bukkit.event.Listener;
 
@@ -21,17 +16,9 @@ public class ListenerManager {
 
     private final List<Listener> listeners = ImmutableList.of(
 
-            // SLOWMODE
             new SlowModeListener(),
-
-            // RESOURCEPACK
             new TitleResourcePackListener(),
-
-            // PLAYERDATA
-            new PlayerDataPreLoginListener(),
-            new PlayerDataQuitListener(),
-
-            // COMMANDSPY
+            new UserDataListener(),
             new CommandSpyListener()
 
     );
