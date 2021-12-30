@@ -87,7 +87,7 @@ public class User {
         for (User user : userMap) {
             if (user.getUniqueId().equals(player.getUniqueId())) return user;
         }
-        return new User(player.getUniqueId());
+        return null;
     }
 
     public static User get(UUID uuid) {
@@ -96,7 +96,7 @@ public class User {
         for (User user : userMap) {
             if (user.getUniqueId().equals(uuid)) return user;
         }
-        return new User(uuid);
+        return null;
     }
 
     public static void saveAll() {
