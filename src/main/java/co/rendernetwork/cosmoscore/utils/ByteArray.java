@@ -2,7 +2,7 @@ package co.rendernetwork.cosmoscore.utils;
 
 import java.math.BigInteger;
 
-public class ByteArrayUtil {
+public class ByteArray {
     public static byte[] decodeUsingBigInteger(String hexString) {
 
         // Make sure it doesn't return NullPointerException when getting the byteArray

@@ -1,7 +1,7 @@
 package co.rendernetwork.cosmoscore.events.listeners;
 
 import co.rendernetwork.cosmoscore.Main;
-import co.rendernetwork.cosmoscore.utils.ByteArrayUtil;
+import co.rendernetwork.cosmoscore.utils.ByteArray;
 import co.rendernetwork.cosmoscore.utils.ColorUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -20,7 +20,7 @@ public class TitleResourcePackListener implements Listener {
         String title = ColorUtil.color(instance.getConfig().getString("resourcepack.title"));
         String subtitle = ColorUtil.color(instance.getConfig().getString("resourcepack.subtitle"));
         String url = instance.getConfig().getString("resourcepack.url");
-        byte[] hash = ByteArrayUtil.decodeUsingBigInteger(instance.getConfig().getString("resourcepack.hash"));
+        byte[] hash = ByteArray.decodeUsingBigInteger(instance.getConfig().getString("resourcepack.hash"));
 
         subtitle = subtitle.replace("%player%", player.getName());
 
