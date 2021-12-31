@@ -5,14 +5,21 @@ import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.*;
 import co.rendernetwork.cosmoscore.Main;
 import co.rendernetwork.cosmoscore.entity.User;
+import co.rendernetwork.cosmoscore.gui.menus.SystemMenu;
 import co.rendernetwork.cosmoscore.utils.ColorUtil;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 @CommandAlias("system")
 @CommandPermission("cosmos.admin")
 public class SystemCommand extends BaseCommand {
 
     private final Main instance = Main.getInstance();
+
+    @Default
+    public void onRun(Player player) {
+        new SystemMenu(player);
+    }
 
     @Subcommand("reload")
     @CommandPermission("cosmos.admin.reload")

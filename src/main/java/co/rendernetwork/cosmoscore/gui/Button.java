@@ -1,5 +1,6 @@
 package co.rendernetwork.cosmoscore.gui;
 
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -16,6 +17,11 @@ public class Button {
 
     public Button addAction(IMenuAction clickAction) {
         actions.add(clickAction);
+        return this;
+    }
+
+    public Button setClickClose() {
+        actions.add(HumanEntity::closeInventory);
         return this;
     }
 
