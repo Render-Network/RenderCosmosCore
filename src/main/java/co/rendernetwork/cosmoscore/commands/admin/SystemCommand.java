@@ -18,7 +18,7 @@ public class SystemCommand extends BaseCommand {
 
     @Default
     public void onRun(Player player) {
-        new SystemMenu(player);
+        new SystemMenu(player).open();
     }
 
     @Subcommand("reload")
