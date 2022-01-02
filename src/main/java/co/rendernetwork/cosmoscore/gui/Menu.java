@@ -28,8 +28,8 @@ public class Menu implements InventoryHolder {
 
     @Override
     public @NotNull Inventory getInventory() {
-        for (Map.Entry<Integer, Button> entry : buttons.entrySet())
-            inventory.setItem(entry.getKey(), entry.getValue().getItem());
+        buttons.forEach((key, value) ->
+                inventory.setItem(key, value.getItem()));
         return inventory;
     }
 
