@@ -17,8 +17,8 @@ public class TitleResourcePackListener implements Listener {
     public void onJoin(PlayerJoinEvent event) {
 
         Player player = event.getPlayer();
-        String title = ColorUtil.color(instance.getConfig().getString("resourcepack.title"));
-        String subtitle = ColorUtil.color(instance.getConfig().getString("resourcepack.subtitle"));
+        String title = ColorUtil.format(instance.getConfig().getString("resourcepack.title"));
+        String subtitle = ColorUtil.format(instance.getConfig().getString("resourcepack.subtitle"));
         String url = instance.getConfig().getString("resourcepack.url");
         byte[] hash = ByteArray.decodeUsingBigInteger(instance.getConfig().getString("resourcepack.hash"));
 
@@ -35,9 +35,9 @@ public class TitleResourcePackListener implements Listener {
     public void onResource(PlayerResourcePackStatusEvent event) {
 
         Player player = event.getPlayer();
-        String title = ColorUtil.color(instance.getConfig().getString("title"));
-        String subtitle = ColorUtil.color(instance.getConfig().getString("subtitle"));
-        String kickMessage = ColorUtil.color(instance.getConfig().getString("resourcepack.kickmessage"));
+        String title = ColorUtil.format(instance.getConfig().getString("title"));
+        String subtitle = ColorUtil.format(instance.getConfig().getString("subtitle"));
+        String kickMessage = ColorUtil.format(instance.getConfig().getString("resourcepack.kickmessage"));
         subtitle = subtitle.replace("%player%", player.getName());
 
         PlayerResourcePackStatusEvent.Status status = event.getStatus();

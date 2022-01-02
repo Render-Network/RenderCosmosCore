@@ -9,13 +9,13 @@ import java.util.List;
 public class Button {
 
     private final ItemStack item;
-    private final List<IMenuAction> actions = new ArrayList<>();
+    private final List<MenuAction> actions = new ArrayList<>();
 
     public Button(ItemStack item) {
         this.item = item;
     }
 
-    public Button addAction(IMenuAction clickAction) {
+    public Button addAction(MenuAction clickAction) {
         actions.add(clickAction);
         return this;
     }
@@ -25,7 +25,7 @@ public class Button {
         return this;
     }
 
-    public List<IMenuAction> getActions() {
+    public List<MenuAction> getActions() {
         return actions;
     }
 

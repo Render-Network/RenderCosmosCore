@@ -30,13 +30,13 @@ public enum Lang {
     public String get() {
         String string = instance.getLanguage().get().getString(path);
         if (string == null) string = defaultMessage;
-        return ColorUtil.color(string);
+        return ColorUtil.format(string);
     }
 
     public String get(CommandSender sender) {
         String string = instance.getLanguage().get().getString(path);
         if (string == null) string = defaultMessage;
-        return ColorUtil.color(string).replace("%player%", sender.getName());
+        return ColorUtil.format(string).replace("%player%", sender.getName());
     }
 
     public String getRaw() {

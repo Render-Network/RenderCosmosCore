@@ -1,7 +1,7 @@
 package co.rendernetwork.cosmoscore.events.listeners;
 
 import co.rendernetwork.cosmoscore.gui.Button;
-import co.rendernetwork.cosmoscore.gui.IMenuAction;
+import co.rendernetwork.cosmoscore.gui.MenuAction;
 import co.rendernetwork.cosmoscore.gui.Menu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -25,7 +25,7 @@ public class MenuListener implements Listener {
         Button button = menu.getButton(event.getRawSlot());
         if (button == null) return;
 
-        for (IMenuAction action : button.getActions())
+        for (MenuAction action : button.getActions())
             action.execute((Player) event.getWhoClicked());
 
     }

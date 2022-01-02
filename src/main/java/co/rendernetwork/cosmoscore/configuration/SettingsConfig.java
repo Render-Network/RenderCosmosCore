@@ -8,7 +8,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class SettingsConfig implements IConfig {
+public class SettingsConfig implements Config {
 
     private final Main instance = Main.getInstance();
 

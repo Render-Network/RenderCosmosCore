@@ -33,7 +33,7 @@ public class SystemCommand extends BaseCommand {
         instance.getSettings().reload();
         User.reloadAllUserData();
 
-        sender.sendMessage(ColorUtil.color("&aAll data has been reloaded."));
+        sender.sendMessage(ColorUtil.format("&aAll data has been reloaded."));
 
     }
 
@@ -44,7 +44,7 @@ public class SystemCommand extends BaseCommand {
 
         User.reloadAllUserData();
 
-        sender.sendMessage(ColorUtil.color("&aPlayer Data for all players has been reloaded."));
+        sender.sendMessage(ColorUtil.format("&aPlayer Data for all players has been reloaded."));
 
     }
 

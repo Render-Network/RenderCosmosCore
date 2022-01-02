@@ -2,7 +2,7 @@ package co.rendernetwork.cosmoscore.configuration;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-public interface IConfig {
+public interface Config {
 
     FileConfiguration get();
     void createIfNotExists();
