@@ -1,6 +1,7 @@
-package co.rendernetwork.cosmoscore.events.listeners;
+package co.rendernetwork.cosmoscore.events;
 
 import co.rendernetwork.cosmoscore.Main;
+import co.rendernetwork.cosmoscore.events.listeners.*;
 import com.google.common.collect.ImmutableList;
 import org.bukkit.event.Listener;
 
