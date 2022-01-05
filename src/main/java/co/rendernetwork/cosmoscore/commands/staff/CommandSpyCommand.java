@@ -21,7 +21,6 @@ public class CommandSpyCommand extends BaseCommand {
     public void onToggle(Player player) {
 
         User user = User.get(player);
-        if (user == null) return;
 
         if (user.isCommandSpyEnabled()) {
             user.setCommandSpyEnabled(false);
@@ -40,9 +39,7 @@ public class CommandSpyCommand extends BaseCommand {
     public void onToggle(CommandSender sender, OnlinePlayer onlinePlayer) {
 
         Player player = onlinePlayer.getPlayer();
-
         User user = User.get(player);
-        if (user == null) return;
 
         if (user.isCommandSpyEnabled()) {
             user.setCommandSpyEnabled(false);
@@ -61,7 +58,6 @@ public class CommandSpyCommand extends BaseCommand {
     public void onEnable(Player player) {
 
         User user = User.get(player);
-        if (user == null) return;
 
         user.setCommandSpyEnabled(true);
         player.sendMessage(Lang.COMMANDSPY_ENABLED.get(player));
@@ -77,7 +73,6 @@ public class CommandSpyCommand extends BaseCommand {
         Player player = onlinePlayer.getPlayer();
 
         User user = User.get(player);
-        if (user == null) return;
 
         user.setCommandSpyEnabled(true);
         sender.sendMessage(Lang.COMMANDSPY_ENABLED.get(player));
@@ -91,7 +86,6 @@ public class CommandSpyCommand extends BaseCommand {
     public void onDisable(Player player) {
 
         User user = User.get(player);
-        if (user == null) return;
 
         user.setCommandSpyEnabled(false);
         player.sendMessage(Lang.COMMANDSPY_DISABLED.get(player));
@@ -107,7 +101,6 @@ public class CommandSpyCommand extends BaseCommand {
         Player player = onlinePlayer.getPlayer();
 
         User user = User.get(player);
-        if (user == null) return;
 
         user.setCommandSpyEnabled(false);
         sender.sendMessage(Lang.COMMANDSPY_DISABLED.get(player));

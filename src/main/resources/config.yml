@@ -11,3 +11,6 @@ resourcepack:
 
 commandspy:
   message: '&8&lCSpy &8dynmie&7: &8/%message%'
+
+autosave:
+  interval: 12000

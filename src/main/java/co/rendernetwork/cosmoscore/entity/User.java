@@ -82,21 +82,23 @@ public class User {
     }
 
     public static User get(Player player) {
-        boolean online = player != null;
-        if (!online) return null;
         for (User user : userMap) {
             if (user.getUniqueId().equals(player.getUniqueId())) return user;
         }
-        return null;
+        User user = new User(player.getUniqueId());
+        user.createIfNotExists();
+        userMap.add(user);
+        return user;
     }
 
     public static User get(UUID uuid) {
-        boolean online = Bukkit.getPlayer(uuid) != null;
-        if (!online) return null;
         for (User user : userMap) {
             if (user.getUniqueId().equals(uuid)) return user;
         }
-        return null;
+        User user = new User(uuid);
+        user.createIfNotExists();
+        userMap.add(user);
+        return user;
     }
 
     public static void saveAll() {

@@ -3,6 +3,7 @@ package co.rendernetwork.cosmoscore;
 import co.rendernetwork.cosmoscore.commands.CommandManager;
 import co.rendernetwork.cosmoscore.configuration.LanguageConfig;
 import co.rendernetwork.cosmoscore.configuration.SettingsConfig;
+import co.rendernetwork.cosmoscore.entity.UserAutoSave;
 import co.rendernetwork.cosmoscore.handlers.HandlerManager;
 import co.rendernetwork.cosmoscore.events.ListenerManager;
 import co.rendernetwork.cosmoscore.entity.User;
@@ -30,6 +31,7 @@ public final class Main extends JavaPlugin {
         new ListenerManager();
 
         reload();
+        new UserAutoSave();
 
     }
 

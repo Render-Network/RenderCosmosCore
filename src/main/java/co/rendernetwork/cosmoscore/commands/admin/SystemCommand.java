@@ -5,6 +5,8 @@ import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.*;
 import co.rendernetwork.cosmoscore.Main;
 import co.rendernetwork.cosmoscore.entity.User;
+import co.rendernetwork.cosmoscore.gui.BaseMenu;
+import co.rendernetwork.cosmoscore.gui.Menu;
 import co.rendernetwork.cosmoscore.gui.menus.SystemMenu;
 import co.rendernetwork.cosmoscore.utils.ColorUtil;
 import org.bukkit.command.CommandSender;
