@@ -3,7 +3,6 @@ package co.rendernetwork.cosmoscore.entity;
 import co.rendernetwork.cosmoscore.Main;
 import co.rendernetwork.cosmoscore.entity.data.UserData;
 import org.bukkit.Bukkit;
-import org.bukkit.Server;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 

@@ -1,11 +1,14 @@
 package me.dynmie.rn.testmodule.commands;
 
 import co.aikar.commands.BaseCommand;
-import co.rendernetwork.cosmoscore.commands.CommandManager;
+import co.aikar.commands.PaperCommandManager;
+import co.rendernetwork.cosmoscore.Main;
 import com.google.common.collect.ImmutableList;
 import me.dynmie.rn.testmodule.commands.impl.TestCommand;
 
-public class ModuleCommandManager extends CommandManager {
+public class ModuleCommandManager {
+
+    PaperCommandManager manager = Main.getInstance().getCommandManager().getCommandManager();
 
     private final ImmutableList<BaseCommand> commands = ImmutableList.of(
             // OTHER
@@ -13,7 +16,7 @@ public class ModuleCommandManager extends CommandManager {
     );
 
     public void registerAllCommands() {
-        commands.forEach(command -> getCommandManager().registerCommand(command));
+        commands.forEach(command -> manager.registerCommand(command));
     }
 
 }

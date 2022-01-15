@@ -26,7 +26,7 @@ public class SystemCommand extends BaseCommand {
     @Description("Reloads RenderCosmosCore")
     public void onReload(CommandSender sender) {
 
-        instance.createConfigs();
+        instance.initializeConfigs();
 
         instance.reloadConfig();
         instance.getLanguage().reload();

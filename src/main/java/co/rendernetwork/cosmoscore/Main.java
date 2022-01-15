@@ -23,19 +23,27 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
 
         instance = this;
+
+        // Configs
         language = new LanguageConfig();
         settings = new SettingsConfig();
 
+        // Handlers
         handlerManager = new HandlerManager();
 
-        createConfigs();
+        // Configs
+        initializeConfigs();
 
+        // Commands and Listeners
         commandManager = new CommandManager();
         new ListenerManager();
 
         reload();
+
+        // Autosave
         new UserAutoSave();
 
+        // Modules
         moduleManager = new ModuleManager();
         moduleManager.loadAllModules();
 
@@ -76,7 +84,7 @@ public final class Main extends JavaPlugin {
         return moduleManager;
     }
 
-    public void createConfigs() {
+    public void initializeConfigs() {
         language.createIfNotExists();
         settings.createIfNotExists();
         saveDefaultConfig();
