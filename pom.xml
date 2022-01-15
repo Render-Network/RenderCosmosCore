@@ -37,11 +37,11 @@
                     <relocations>
                         <relocation>
                             <pattern>co.aikar.commands</pattern>
-                            <shadedPattern>co.rendernetwork.cosmoscore.acf</shadedPattern>
+                            <shadedPattern>co.aikar.commands</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>co.aikar.locales</pattern>
-                            <shadedPattern>co.rendernetwork.cosmoscore.locales</shadedPattern>
+                            <shadedPattern>co.aikar.locales</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

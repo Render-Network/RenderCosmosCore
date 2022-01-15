@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class ChatHandler {
+public class ChatHandler implements Handler {
 
     private final Main instance = Main.getInstance();
 

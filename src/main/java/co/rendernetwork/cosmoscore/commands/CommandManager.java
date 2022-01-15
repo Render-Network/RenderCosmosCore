@@ -5,10 +5,17 @@ import co.aikar.commands.ConditionFailedException;
 import co.aikar.commands.MessageType;
 import co.aikar.commands.PaperCommandManager;
 import co.rendernetwork.cosmoscore.Main;
+import co.rendernetwork.cosmoscore.commands.admin.ModuleCommand;
 import co.rendernetwork.cosmoscore.commands.admin.SystemCommand;
 import co.rendernetwork.cosmoscore.commands.staff.ChatCommand;
 import co.rendernetwork.cosmoscore.commands.staff.CommandSpyCommand;
+import co.rendernetwork.cosmoscore.modules.ModuleDescription;
+import co.rendernetwork.cosmoscore.modules.ModuleManager;
+import com.google.common.collect.ImmutableList;
 import org.bukkit.ChatColor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CommandManager {
 
@@ -23,6 +30,8 @@ public class CommandManager {
 
         loadLocaleSettings();
         registerConditions();
+        registerCompletions();
+
         registerAllCommands();
 
     }
@@ -32,10 +41,11 @@ public class CommandManager {
         registerCommand(new SystemCommand());
         registerCommand(new ChatCommand());
         registerCommand(new CommandSpyCommand());
+        registerCommand(new ModuleCommand());
 
     }
 
-    private void registerCommand(BaseCommand baseCommand) {
+    public void registerCommand(BaseCommand baseCommand) {
         commandManager.registerCommand(baseCommand);
     }
 
@@ -64,4 +74,38 @@ public class CommandManager {
 
     }
 
+    private void registerCompletions() {
+        commandManager.getCommandCompletions().registerCompletion("enabledModulesList", c -> {
+            List<String> list = new ArrayList<>();
+            for (ModuleDescription description : ModuleManager.getAllModules().values()) {
+                if (description.isActivated()) {
+                    list.add(description.getIdentifier());
+                }
+            }
+            if (list.isEmpty()) return null;
+            return ImmutableList.copyOf(list);
+        });
+        commandManager.getCommandCompletions().registerCompletion("disabledModulesList", c -> {
+            List<String> list = new ArrayList<>();
+            for (ModuleDescription description : ModuleManager.getAllModules().values()) {
+                if (!description.isActivated()) {
+                    list.add(description.getIdentifier());
+                }
+            }
+            if (list.isEmpty()) return null;
+            return ImmutableList.copyOf(list);
+        });
+        commandManager.getCommandCompletions().registerCompletion("allModulesList", c -> {
+            List<String> list = new ArrayList<>();
+            for (ModuleDescription description : ModuleManager.getAllModules().values()) {
+                list.add(description.getIdentifier());
+            }
+            if (list.isEmpty()) return null;
+            return ImmutableList.copyOf(list);
+        });
+    }
+
+    public PaperCommandManager getCommandManager() {
+        return commandManager;
+    }
 }

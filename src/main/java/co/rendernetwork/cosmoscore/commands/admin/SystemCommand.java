@@ -5,8 +5,6 @@ import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.*;
 import co.rendernetwork.cosmoscore.Main;
 import co.rendernetwork.cosmoscore.entity.User;
-import co.rendernetwork.cosmoscore.gui.BaseMenu;
-import co.rendernetwork.cosmoscore.gui.Menu;
 import co.rendernetwork.cosmoscore.gui.menus.SystemMenu;
 import co.rendernetwork.cosmoscore.utils.ColorUtil;
 import org.bukkit.command.CommandSender;
@@ -35,7 +33,9 @@ public class SystemCommand extends BaseCommand {
         instance.getSettings().reload();
         User.reloadAllUserData();
 
-        sender.sendMessage(ColorUtil.format("&aAll data has been reloaded."));
+        instance.getModuleManager().reloadAllModules();
+
+        sender.sendMessage(ColorUtil.format("&aAll data and modules has been reloaded."));
 
     }
 
@@ -48,6 +48,14 @@ public class SystemCommand extends BaseCommand {
 
         sender.sendMessage(ColorUtil.format("&aPlayer Data for all players has been reloaded."));
 
+    }
+
+    @Subcommand("reload modules")
+    @CommandPermission("cosmos.admin.reload.modules")
+    @Description("Reloads modules")
+    public void onReloadModules(CommandSender sender) {
+        instance.getModuleManager().reloadAllModules();
+        sender.sendMessage(ColorUtil.format("&aAll modules has been reloaded."));
     }
 
     @HelpCommand

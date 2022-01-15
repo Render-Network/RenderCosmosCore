@@ -15,7 +15,11 @@ public enum Lang {
     CHAT_SLOWMODE_PLAYER("chat_slowmode_player", ""),
     COMMANDSPY_ENABLED("commandspy_enabled", ""),
     COMMANDSPY_DISABLED("commandspy_disabled", ""),
-    COMMANDSPY_MESSAGE("commandspy_message", "");
+    COMMANDSPY_MESSAGE("commandspy_message", ""),
+    MODULE_NOT_FOUND("module_not_found", ""),
+    MODULE_ENABLED("module_enabled", ""),
+    MODULE_DISABLED("module_disabled", ""),
+    FAILED_TO_PERFORM_COMMAND("failed_to_perform_command", "");
 
     Main instance = Main.getInstance();
 

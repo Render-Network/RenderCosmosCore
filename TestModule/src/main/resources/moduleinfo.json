@@ -1,0 +1,8 @@
+{
+  "name": "TestModule",
+  "identifier": "testmodule",
+  "version": "1.0-SNAPSHOT",
+  "authors": ["dynmie"],
+  "description": "The best module.",
+  "main": "me.dynmie.rn.testmodule.TestModule"
+}

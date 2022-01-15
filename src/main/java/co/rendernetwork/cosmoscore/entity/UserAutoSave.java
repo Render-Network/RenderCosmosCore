@@ -14,10 +14,10 @@ public class UserAutoSave extends BukkitRunnable {
 
     @Override
     public void run() {
-        LoggerUtil.log("Saving player data...");
+        LoggerUtil.info("Saving player data...");
         User.saveAll();
         User.reloadAllUserData();
-        LoggerUtil.log("Saved player data.");
+        LoggerUtil.info("Saved player data.");
     }
 
 }
